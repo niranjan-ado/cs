@@ -1,0 +1,192 @@
+/* Color Palette (Reusing from previous concept for brand consistency) */
+:root {
+    --color-primary: #2C3E50; /* Deep Blue/Charcoal */
+    --color-secondary: #1ABC9C; /* Teal Green */
+    --color-accent: #F39C12; /* Vibrant Orange */
+    --color-light-gray: #ECF0F1;
+    --color-mid-gray: #BDC3C7;
+    --color-white: #ffffff;
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+/* Base Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-primary);
+    background-color: var(--color-white);
+    display: flex; /* Use flexbox for vertical centering */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    padding: 20px; /* Add some padding around the content */
+}
+
+/* Container for all content */
+.coming-soon-container {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 40px;
+    max-width: 700px;
+    text-align: center;
+    width: 100%; /* Ensure it takes full width up to max-width */
+}
+
+/* Header */
+.header {
+    margin-bottom: 30px;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 3.5rem; /* Larger for impact */
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -1px; /* Tighter for modern look */
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--color-mid-gray);
+    margin-top: 10px;
+}
+
+/* Main Content */
+.main-content {
+    margin-bottom: 30px;
+}
+
+.status-message {
+    font-size: 2.2rem;
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px; /* Space for underline */
+}
+
+.status-message::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+}
+
+.teaser-text {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.call-to-action, .social-prompt {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    flex-direction: column; /* Stack vertically on small screens */
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-info a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally in column */
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--color-secondary);
+}
+
+.contact-info a .fas {
+    margin-right: 10px;
+    color: var(--color-accent);
+    font-size: 1.3rem;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 1.8rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.social-links a:hover {
+    background-color: var(--color-accent);
+    transform: translateY(-5px);
+}
+
+/* Footer */
+.footer {
+    font-size: 0.9rem;
+    color: var(--color-mid-gray);
+}
+
+/* Responsive Adjustments */
+@media (min-width: 600px) {
+    .contact-info {
+        flex-direction: row; /* Horizontal on larger screens */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .coming-soon-container {
+        padding: 30px 20px;
+    }
+    .logo {
+        font-size: 2.8rem;
+    }
+    .status-message {
+        font-size: 1.8rem;
+    }
+    .teaser-text, .call-to-action, .social-prompt, .contact-info a {
+        font-size: 1rem;
+    }
+    .social-links a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.6rem;
+    }
+}
